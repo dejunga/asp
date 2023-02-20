@@ -5,7 +5,7 @@
 #include <map>
 #include <string>
 #include <vector>
-
+#include <chrono>
 
 using namespace std;
 
@@ -15,6 +15,8 @@ public:
 
 
     std::map<long double, std::pair<long double, long double>, std::greater<>> data2;
+
+
 
 
 
@@ -122,6 +124,63 @@ public:
 
     }
 
+    void measure_delete_by_key() {
+    auto start = std::chrono::high_resolution_clock::now();
+    motor.delete_by_key();
+    auto end = std::chrono::high_resolution_clock::now();
+    auto duration = std::chrono::duration_cast<std::chrono::microseconds>(end - start).count();
+    std::cout << "Time taken by delete_by_key: " << duration << " microseconds\n";}
+
+
+
+
+//    void measure_add_by_key() {
+//    auto start = std::chrono::high_resolution_clock::now();
+//    motor.add_by_key();
+//    auto end = std::chrono::high_resolution_clock::now();
+//    auto duration = std::chrono::duration_cast<std::chrono::microseconds>(end - start).count();
+//    std::cout << "Time taken by add_by_key: " << duration << " microseconds\n";}
+//
+//    void measure_get_top_keys() {
+//    auto start = std::chrono::high_resolution_clock::now();
+//    motor.get_top_keys();
+//    auto end = std::chrono::high_resolution_clock::now();
+//    auto duration = std::chrono::duration_cast<std::chrono::microseconds>(end - start).count();
+//    std::cout << "Time taken by get_top_keys: " << duration << " microseconds\n";}
+//
+//
+//
+//    void measure_get_min_keys() {
+//    auto start = std::chrono::high_resolution_clock::now();
+//    motor.get_min_keys();
+//    auto end = std::chrono::high_resolution_clock::now();
+//    auto duration = std::chrono::duration_cast<std::chrono::microseconds>(end - start).count();
+//    std::cout << "Time taken by get_min_keys: " << duration << " microseconds\n";}
+//
+//
+//    void measure_get_max_values() {
+//    auto start = std::chrono::high_resolution_clock::now();
+//    motor.get_max_values();
+//    auto end = std::chrono::high_resolution_clock::now();
+//    auto duration = std::chrono::duration_cast<std::chrono::microseconds>(end - start).count();
+//    std::cout << "Time taken by get_max_values: " << duration << " microseconds\n";}
+//
+//
+//    void measure_get_min_values() {
+//    auto start = std::chrono::high_resolution_clock::now();
+//    motor.get_min_values(3);
+//    auto end = std::chrono::high_resolution_clock::now();
+//    auto duration = std::chrono::duration_cast<std::chrono::microseconds>(end - start).count();
+//    std::cout << "Time taken by get_min_values: " << duration << " microseconds\n";}
+//
+//
+//    void measure_find() {
+//    auto start = std::chrono::high_resolution_clock::now();
+//    motor.find(132.697);
+//    auto end = std::chrono::high_resolution_clock::now();
+//    auto duration = std::chrono::duration_cast<std::chrono::microseconds>(end - start).count();
+//    std::cout << "Time taken by find: " << duration << " microseconds\n";}
+
 
 
 
@@ -196,6 +255,7 @@ public:
         motor.add_by_key(150,20,25);
 
 
+
         // Print out the data in the map
         for (const auto &pair: motor.data2) {
             if (i >= 10) {
@@ -208,7 +268,6 @@ public:
 
 
         cout << "--------------------------------" <<endl;
-
 
         motor.get_top_keys(1);
 
@@ -226,8 +285,5 @@ public:
 
         return 0;
     }
-
-
-
 
 
