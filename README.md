@@ -1,8 +1,8 @@
 # README file za temperaturu motora
 
-Dobrodošli u moj mini projekt u kojem manipuliramo velikom količinom podataka i iz nje izvkačimo ono što nam je potrebno.
+Dobrodošli u moj mini projekt u kojem manipuliramo velikom količinom podataka i iz nje izvlačimo ono što nam je potrebno.
 CSV file originalno sadrži malo više od 17 milijuna podataka spremljenih kao stringovi.
-Mapa je kreirana čitanjem 500 000 linija CSV file-a, delimiter je "," te se prvi stupac koristi kao key, a preostala dva stupca kao par vrijednosti
+Mapa je kreirana čitanjem 500 000 linija CSV file-a, delimiter je "," te se prvi stupac koristi kao key, a preostala dva stupca kao par vrijednosti.
 
 
 
